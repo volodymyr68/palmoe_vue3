@@ -3,8 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
 </head>
 <body>
+    <div id="app">
+        <h1>{{first_message}}</h1>
+        <button @click="secondMessage">Change first message</button>
+    </div>
+
+    <div id="app2">
+
+    </div>
+
 
 </body>
+<script src="app.js"></script>
+<script type="module" src="app2.js"></script>
 </html>
