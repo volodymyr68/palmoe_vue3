@@ -12,43 +12,46 @@ export default {
   },
   methods:{
     formValidation(){
-      let errorList = []
-      errorList.push(validateName(this.form.name));
-      errorList.push(validateAge(this.form.age));
+      let errorList = [...validateName(this.form.name),...validateAge(this.form.age)]
       this.errors = errorList.filter(error=>error!=="").join(", ");
     },
   }
 }
 const validateName = (name)=>{
+  let errorList = [];
   if(name.trim()===""){
-    return "Name cannot be empty";
+    errorList.push("Name cannot be empty");
   }
   if(isNaN(name)){
-    return "Name must be a string";
+    errorList.push("Name must be a string");
   }
   if(name.length <3){
-    return "Name must be at least 3 characters long";
+    errorList.push("Name must be at least 3 characters long");
   }
-  return "";
+  return errorList;
 }
 
 const validateAge = (age)=>{
+  let errorList = [];
   if(!isNaN(age)){
-    return "Age must be a number";
+    errorList.push("Age must be a number");
   }
   if(age < 18){
-    return "Age must be 18 or above";
+    errorList.push("Age must be 18 or above");
   }
-  return "";
+  return errorList;
 }
 </script>
 
 <template>
   <div class="taskBox">
-  <p>Створіть метод, який буде перевіряти введені дані у формі на відповідність деяким правилам.</p>
+    <p>
+      Створіть метод, який буде перевіряти введені дані у формі на відповідність
+      деяким правилам.
+    </p>
     <form class="wrapper" @submit.prevent="formValidation">
-      <input type="text" v-model="form.name" placeholder="Enter your name">
-      <input type="text" v-model="form.age" placeholder="Enter your age">
+      <input type="text" v-model="form.name" placeholder="Enter your name" />
+      <input type="text" v-model="form.age" placeholder="Enter your age" />
       <p>{{errors}}</p>
       <button type="submit">Submit</button>
     </form>
@@ -56,7 +59,7 @@ const validateAge = (age)=>{
 </template>
 
 <style scoped>
-.taskBox{
+.taskBox {
   display: flex;
   flex-direction: column;
   border: 3px solid #ffffff;

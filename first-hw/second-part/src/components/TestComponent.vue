@@ -45,29 +45,35 @@ export default {
 
 <template>
   <div class="taskBox">
-    <p>1)Створіть реактивний об'єкт і виведіть його властивості в шаблон. Змініть властивість об'єкта і спостерігайте за змінами в DOM.
+    <p>
+      1)Створіть реактивний об'єкт і виведіть його властивості в шаблон. Змініть
+      властивість об'єкта і спостерігайте за змінами в DOM.
 
-      <br/>2)Створіть метод, який буде викликатися при кліку на кнопку і змінювати деякі дані в інстансі
+      <br />2)Створіть метод, який буде викликатися при кліку на кнопку і
+      змінювати деякі дані в інстансі
 
-      <br/>3)Створіть метод, який приймає подію і використовує ії для зміни даних інстанса.
+      <br />3)Створіть метод, який приймає подію і використовує ії для зміни
+      даних інстанса.
 
-      <br/>4)Створіть метод для фільтрації масиву об'єктів за деяким критерієм.
+      <br />4)Створіть метод для фільтрації масиву об'єктів за деяким критерієм.
 
-      <br/>5)Використайте метод для обробки події кліку, який змінює стан інших компонентів.</p>
-    <br/>
+      <br />5)Використайте метод для обробки події кліку, який змінює стан інших
+      компонентів.
+    </p>
+    <br />
     <p>{{user.name}} - {{user.age}}</p>
     <button @click="incrementAge">Increment Age</button>
     <button @click="changeUserData">Update Object</button>
     <input type="text" @input="updateName" placeholder="Введіть нове ім'я" />
     <p>{{objects}}</p>
     <button @click="sortObjectsById">Sort array</button>
-    <ChildTestComponent :message/>
+    <ChildTestComponent :message />
     <button @click="changeChildComponent">Change child component</button>
   </div>
 </template>
 
 <style scoped>
-.taskBox{
+.taskBox {
   display: flex;
   flex-direction: column;
   border: 3px solid #ffffff;
