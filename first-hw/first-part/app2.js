@@ -1,11 +1,10 @@
 import Counter from "./Counter.js";
 
-const App2={
-
+const App2 = {
     components: {
-        Counter
+        Counter,
     },
-    template:`
+    template: `
       <p>{{getFullName}}</p>
       <p>{{ inputText }}</p>
       <input type="text" v-model="inputText" placeholder="Введите текст"/>
@@ -15,15 +14,15 @@ const App2={
         return {
             firstName: "Volodymyr",
             lastName: "Senchenko",
-            inputText:''
-        }
+            inputText: "",
+        };
     },
     computed: {
         getFullName() {
             return this.firstName + " " + this.lastName;
-        }
-    }
-}
+        },
+    },
+};
 
 const app2 = Vue.createApp(App2);
-app2.mount("#app2")
+app2.mount("#app2");

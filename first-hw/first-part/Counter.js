@@ -1,19 +1,19 @@
 import CounterResult from "./CounterResult.js";
-export default  {
-    name:"Counter",
-    components: {CounterResult},
-    template:`
-      <CounterResult :count=this.count />
+export default {
+    name: "Counter",
+    components: { CounterResult },
+    template: `
+      <CounterResult :count="count" />
         <button @click="increment">Increment</button>
     `,
     data() {
         return {
-            count: 0
-        }
+            count: 0,
+        };
     },
-    methods:{
+    methods: {
         increment() {
-            this.count++
-        }
-    }
-}
+            this.count++;
+        },
+    },
+};
