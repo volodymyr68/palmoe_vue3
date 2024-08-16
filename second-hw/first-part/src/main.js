@@ -16,8 +16,8 @@ const vuetify = createVuetify({
     directives,
 });
 
-// createApp(App).use(vuetify).mount('#app')
-const app = createApp(App);
-app.component('Product');
-app.use(vuetify);
-app.mount('#app');
+// const app = createApp(App);
+// app.component("Product",Product);
+// app.use(vuetify);
+// app.mount('#app');
+createApp(App).component("Product",Product).use(vuetify).mount('#app')

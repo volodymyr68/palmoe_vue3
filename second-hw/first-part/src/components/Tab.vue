@@ -13,12 +13,7 @@ export default {
 
 <template>
   <p>{{theme}}</p>
-  <v-btn name="change"
-         @click="this.theme = !this.theme"
-         text="change"
-         />
+  <v-btn name="change" @click="this.theme = !this.theme" text="change" />
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

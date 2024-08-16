@@ -1,11 +1,7 @@
-<script setup>
-
-</script>
+<script setup></script>
 
 <template>
-<span>other component</span>
+  <span>other component</span>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

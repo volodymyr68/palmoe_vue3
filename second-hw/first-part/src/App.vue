@@ -9,29 +9,25 @@ export default {
   methods:{
   }
 };
-
 </script>
 
 <template>
   <div>
-    <Tab/>
-    <Products/>
+    <Tab />
+    <Products />
   </div>
-
-
 </template>
 
 <style scoped>
-*{
-  margin:0;
+* {
+  margin: 0;
   padding: 0;
 }
-.white{
+.white {
   background: white;
 }
 
-.dark{
+.dark {
   background: darkgray;
 }
-
 </style>
