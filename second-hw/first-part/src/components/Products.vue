@@ -1,5 +1,5 @@
 <script>
-import axiosInstance from "../../services/axios.js";
+import axiosInstance from "@/services/axios.js";
 import OtherComponent from "@/components/OtherComponent.vue";
 
 export default {
