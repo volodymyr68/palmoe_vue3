@@ -1,37 +1,4 @@
-<template>
-  <div :class="theme">
-    <div class="task">
-      <TimeListComponent />
-    </div>
-    <div class="task">
-     <FormComponent />
-    </div>
-    <div class="task">
-     <DynamicButtonComponent />
-    </div>
-    <div class="task">
-     <RandomItemsComponent />
-    </div>
-    <div class="task">
-     <ToggleBoxComponent />
-    </div>
-    <div class="task">
-      <ThemeToggleComponent @theme-change="toggleTheme" />
-    </div>
-    <div class="task">
-     <DynamicTableComponent />
-    </div>
-    <div class="task">
-      <FilteredListComponent :object-list="objectList" />
-    </div>
-    <div class="task">
-      <PaginatedListComponent :object-list="objectList" />
-    </div>
-  </div>
-</template>
-
 <script>
-
 import TimeListComponent from "@/components/task-components/TimeListComponent.vue";
 import FormComponent from "@/components/task-components/FormComponent.vue";
 import DynamicButtonComponent from "@/components/task-components/DynamicButtonComponent.vue";
@@ -98,6 +65,38 @@ export default {
   }
 };
 </script>
+
+<template>
+  <div :class="theme">
+    <div class="task">
+      <TimeListComponent />
+    </div>
+    <div class="task">
+      <FormComponent />
+    </div>
+    <div class="task">
+      <DynamicButtonComponent />
+    </div>
+    <div class="task">
+      <RandomItemsComponent />
+    </div>
+    <div class="task">
+      <ToggleBoxComponent />
+    </div>
+    <div class="task">
+      <ThemeToggleComponent @theme-change="toggleTheme" />
+    </div>
+    <div class="task">
+      <DynamicTableComponent />
+    </div>
+    <div class="task">
+      <FilteredListComponent :object-list="objectList" />
+    </div>
+    <div class="task">
+      <PaginatedListComponent :object-list="objectList" />
+    </div>
+  </div>
+</template>
 
 <style scoped>
 .task {
