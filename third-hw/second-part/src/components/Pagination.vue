@@ -1,12 +1,11 @@
 <script>
-import {mapActions, mapGetters, mapState} from "pinia";
+import {mapActions, mapState} from "pinia";
 import {usePlaceholderStore} from "@/stores/PlaceholderStore.js";
 
 export default {
   name: "Pagination",
   computed:{
-    ...mapState(usePlaceholderStore,["placeholderStore"]),
-    ...mapGetters(usePlaceholderStore,["getAllPlaceholders","getNext","getPrev","getCurrentPage","getTotalPages"])
+    ...mapState(usePlaceholderStore,["placeholderStore","getAllPlaceholders","getNext","getPrev","getCurrentPage","getTotalPages"]),
   },
   methods:{
     ...mapActions(usePlaceholderStore,["fetchRecords","nextPage","prevPage","setDefaultData","fetchByPage"])

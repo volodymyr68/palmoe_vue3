@@ -1,24 +1,23 @@
 <script>
-import {mapActions, mapGetters, mapState} from "pinia";
+import {mapActions, mapState} from "pinia";
 import {useCounterStore} from "@/stores/CounterStore.js";
 import {useProductStore} from "@/stores/ProductStore.js";
 import Pagination from "@/components/Pagination.vue";
 import {useUserStore} from "@/stores/UserStore.js";
+
 
 export default {
   name:"App",
   components: {Pagination},
   data(){
     return {
-      productList:[]
+      productList:[],
     }
   },
   computed:{
     ...mapState(useCounterStore,["counter"]),
-    ...mapState(useProductStore, ["products"]),
-    ...mapGetters(useProductStore,["twoProducts"]),
-    ...mapState(useUserStore,["userStore"]),
-    ...mapGetters(useUserStore,["getAccess"]),
+    ...mapState(useProductStore, ["products","twoProducts"]),
+    ...mapState(useUserStore,["userStore","getAccess"]),
   },
   methods:{
     ...mapActions(useCounterStore,["increment","decrement","setCounter"]),
@@ -29,7 +28,7 @@ export default {
     this.getProducts();
     this.setCounter();
     this.setDefaultFullName();
-    this.setAccess(false)
+    this.setAccess(false);
   }
 }
 </script>
@@ -48,8 +47,6 @@ export default {
     <v-btn @click="setAccess(!getAccess)">Change access</v-btn>
     <router-view></router-view>
   </div>
-
-
 </template>
 
 <style scoped>
