@@ -1,6 +1,5 @@
 <script>
 import validationMixin from "@/mixins/validationMixin.js";
-import errors from "@/errors/errors.js";
 
 export default {
   name: "FormComponent",

@@ -160,5 +160,4 @@ export default {
   row-gap: 20px;
   border: 3px solid grey;
 }
-
 </style>
