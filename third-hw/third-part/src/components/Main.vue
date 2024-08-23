@@ -68,34 +68,6 @@ export default {
           }, { once: true });
         });
       }
-    },
-    draggable: {
-      mounted(el) {
-        el.style.position = 'absolute';
-        el.style.cursor = 'move';
-
-        let offsetX, offsetY;
-
-        const onMouseDown = (event) => {
-          offsetX = event.clientX - el.getBoundingClientRect().left;
-          offsetY = event.clientY - el.getBoundingClientRect().top;
-
-          document.addEventListener('mousemove', onMouseMove);
-          document.addEventListener('mouseup', onMouseUp);
-        };
-
-        const onMouseMove = (event) => {
-          el.style.left = `${event.clientX - offsetX}px`;
-          el.style.top = `${event.clientY - offsetY}px`;
-        };
-
-        const onMouseUp = () => {
-          document.removeEventListener('mousemove', onMouseMove);
-          document.removeEventListener('mouseup', onMouseUp);
-        };
-
-        el.addEventListener('mousedown', onMouseDown);
-      }
     }
   }
 }
@@ -140,7 +112,7 @@ export default {
       <router-link :to="{name:'FifthTask'}">FifthTask</router-link>
     </div>
     <div class="task">
-      <p>6 Стовріть слот для модального вікна за допомогою которого можно будет встановлювати контент для хедера, футера та тіла.</p>
+      <p>6 Створіть базовий міксін, який додає декілька методів або даних у компонент.</p>
       <p>This is mixin method  : {{helloUser("Vova")}}</p>
       <p>Also check console</p>
     </div>
@@ -153,24 +125,24 @@ export default {
       <p>{{this.helloGlobal()}}</p>
     </div>
     <div class="task">
-      <p>9 Розробіть міксін, який додає валідацію для форми в компоненті.</p>
+      <p>8 Розробіть міксін, який додає валідацію для форми в компоненті.</p>
       <FormComponent/>
     </div>
     <div class="task">
-      <p v-text-style>10 Створіть базову власну директиву, яка змінює колір тексту елемента, на якому вона використовується.</p>
+      <p v-text-style>11 Створіть базову власну директиву, яка змінює колір тексту елемента, на якому вона використовується.</p>
     </div>
     <div class="task">
-      <p>11 Створіть базову власну директиву, яка змінює колір тексту елемента, на якому вона використовується.</p>
+      <p>10 Створіть базову власну директиву, яка змінює колір тексту елемента, на якому вона використовується.</p>
       //mounted
       <div v-param-directive="'color'">test</div>
       <div v-param-directive="'border'">test2</div>
     </div>
     <div class="task">
-      <p>12 Створіть власну директиву для відображення тултипа при наведенні миші.</p>
+      <p>11 Створіть власну директиву для відображення тултипа при наведенні миші.</p>
       <div v-tooltip> Use to see tooltip</div>
     </div>
     <div class="task" v-draggable>
-      <p>13 Розробіть директиву, яка дозволяє зробити елемент перетягуваним.</p>
+      <p>12 Розробіть директиву, яка дозволяє зробити елемент перетягуваним.</p>
       <span >Drag me</span>
     </div>
   </div>

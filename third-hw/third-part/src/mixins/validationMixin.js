@@ -1,3 +1,5 @@
+import ERRORS from "@/errors/errors.js";
+import errors from "@/errors/errors.js";
 export default {
     data(){
         return{
@@ -7,28 +9,21 @@ export default {
     methods:{
         validateName(name){
             if(name.length < 3){
-                if(!this.errors.includes("Name should be at least 3 characters long")){
-                    this.errors.push("Name should be at least 3 characters long")
+                if(!this.errors.includes(ERRORS.NAME_SIZE_ERROR)){
+                    this.errors.push(ERRORS.NAME_SIZE_ERROR)
                 }
             }else{
-                this.errors = this.errors.filter(error => error!== "Name should be at least 3 characters long")
+                this.errors = this.errors.filter(error => error!== ERRORS.NAME_SIZE_ERROR)
             }
         },
         validateEmail(email){
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if(!emailRegex.test(email)){
-                if(!this.errors.includes("Invalid email address")){
-                    this.errors.push("Invalid email address");
+                if(!this.errors.includes(ERRORS.EMAIL_FORMAT_ERROR)){
+                    this.errors.push(ERRORS.EMAIL_FORMAT_ERROR);
                 }
             }else{
-                this.errors = this.errors.filter(error => error!== "Invalid email address")
-            }
-        },
-        submitForm(){
-            if (this.errors.length){
-                alert("Please fix errors");
-            }else {
-                alert("Success!");
+                this.errors = this.errors.filter(error => error!== ERRORS.EMAIL_FORMAT_ERROR)
             }
         }
     }

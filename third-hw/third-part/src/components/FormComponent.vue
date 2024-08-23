@@ -1,5 +1,6 @@
 <script>
 import validationMixin from "@/mixins/validationMixin.js";
+import errors from "@/errors/errors.js";
 
 export default {
   name: "FormComponent",
@@ -7,7 +8,17 @@ export default {
     return {
       name: "",
       email: "",
+      submitResult:""
     };
+  },
+  methods:{
+    submitForm(){
+      if (this.errors.length){
+        this.submitResult =  JSON.stringify(this.errors);
+      }else {
+        this.submitResult =  "Success";
+      }
+    }
   },
   mixins:[validationMixin]
 }
@@ -25,8 +36,7 @@ export default {
       {{errors}}
     </li>
   </div>
+  <div v-if="submitResult">
+    Result of submission {{submitResult}}
+  </div>
 </template>
-
-<style scoped>
-
-</style>

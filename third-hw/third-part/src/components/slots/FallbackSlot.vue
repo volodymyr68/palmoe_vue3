@@ -9,7 +9,3 @@ export default {
     <p>This is the default slot content.</p>
   </slot>
 </template>
-
-<style scoped>
-
-</style>

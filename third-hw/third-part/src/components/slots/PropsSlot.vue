@@ -12,7 +12,3 @@ export default {
 <template>
   <slot name="props" :items="items"></slot>
 </template>
-
-<style scoped>
-
-</style>
